@@ -36,6 +36,7 @@ jobs:
         cp ../u-boot-xlnx/u-boot.elf ./
         cp ../embeddedsw/lib/sw_apps/zynq_fsbl/src/fsbl.elf ./
         dd if=/dev/urandom of=./u-boot.elf bs=1K count=100 # damage it
+        dd if=/dev/urandom of=./fsbl.elf bs=1K count=10 # damage it
         ./mkbootimage ../build.bif ../BOOT.BIN
         ls -lash ../BOOT.BIN
     - name: Upload
